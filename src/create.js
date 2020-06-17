@@ -53,7 +53,7 @@ let init = async (templateName, projectName) => {
     // console.log(data)
     if(!data) return
 
-    let reposList = data.map(item => item.name).filter(item => item.name != name)
+    let reposList = data.map(item => item.name).filter(item => item != name)
 
     if(!templateName){// 未传入要下载的仓库名        
         let repos = await inquirer.prompt([

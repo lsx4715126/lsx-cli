@@ -24,6 +24,8 @@ var _axios = require('axios');
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _package = require('../package.json');
+
 var _get = require('./utils/get');
 
 var _rc = require('./utils/rc');
@@ -83,6 +85,8 @@ let init = (() => {
 
         let reposList = data.map(function (item) {
             return item.name;
+        }).filter(function (item) {
+            return item != _package.name;
         });
 
         if (!templateName) {
