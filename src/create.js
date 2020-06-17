@@ -5,6 +5,7 @@ import chalk from 'chalk';
 import symbol from 'log-symbols';
 import axios from 'axios'
 
+import { name } from '../package.json'
 import { downloadLocal } from './utils/get';
 import { getAll } from './utils/rc'
 
@@ -52,7 +53,7 @@ let init = async (templateName, projectName) => {
     // console.log(data)
     if(!data) return
 
-    let reposList = data.map(item => item.name)
+    let reposList = data.map(item => item.name).filter(item => item.name != name)
 
     if(!templateName){// 未传入要下载的仓库名        
         let repos = await inquirer.prompt([
