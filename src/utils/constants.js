@@ -1,4 +1,5 @@
 import {version} from '../../package.json';
+let path = require('path');
 
 //当前 package.json 的版本号
 export const VERSION = version;
@@ -7,7 +8,7 @@ export const VERSION = version;
 const HOME = process.env[process.platform === 'win32' ? 'USERPROFILE' : 'HOME'];// C:\Users\Administrator
 
 // 配置文件目录
-export const RC = `${HOME}/.lsxsrc`;
+export const RC = path.join(HOME, '.lsxrc');
 
 // RC 配置下载模板的地方，给 github 的 api 使用
 // https://api.github.com/users/YvetteLau/repos

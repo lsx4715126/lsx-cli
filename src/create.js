@@ -49,11 +49,13 @@ let init = async (templateName, projectName) => {
     /**
      * 1.获取仓库信息。通过ajax获取 lsx4715126（git用户） 下的所有仓库信息
      */
-    let data = await loading(fetchReposList, '开始获取仓库列表...', '仓库列表获取失败!')
-    // console.log(data)
-    if(!data) return
+    // let data = await loading(fetchReposList, '开始获取仓库列表...', '仓库列表获取失败!')
+    // // console.log(data)
+    // if(!data) return
 
-    let reposList = data.map(item => item.name).filter(item => item != name)
+    // let reposList = data.map(item => item.name).filter(item => item != name)
+    
+    let reposList = [ 'cms-back', 'cms-front' ]
 
     if(!templateName){// 未传入要下载的仓库名        
         let repos = await inquirer.prompt([

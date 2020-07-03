@@ -7,6 +7,8 @@ exports.DEFAULTS = exports.RC = exports.VERSION = undefined;
 
 var _package = require('../../package.json');
 
+let path = require('path');
+
 //当前 package.json 的版本号
 const VERSION = exports.VERSION = _package.version;
 
@@ -14,7 +16,7 @@ const VERSION = exports.VERSION = _package.version;
 const HOME = process.env[process.platform === 'win32' ? 'USERPROFILE' : 'HOME']; // C:\Users\Administrator
 
 // 配置文件目录
-const RC = exports.RC = `${HOME}/.lsxsrc`;
+const RC = exports.RC = path.join(HOME, '.lsxrc');
 
 // RC 配置下载模板的地方，给 github 的 api 使用
 // https://api.github.com/users/YvetteLau/repos

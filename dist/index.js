@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 // 主的流程控制
 let apply = (action, ...args) => {
+    // console.log(action, ...args)
     //babel-env
     require(`./${action}`)(...args);
 };

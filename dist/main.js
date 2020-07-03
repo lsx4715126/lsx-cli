@@ -39,8 +39,8 @@ let actionMap = {
 
     // 添加 create / config 命令
 };Object.keys(actionMap).forEach(action => {
-    let description = actionMap[action].description ? actionMap[action].description : '';
-    let alias = actionMap[action].alias ? actionMap[action].alias : actionMap[action].alias;
+    let description = actionMap[action].description ? actionMap[action].description : 'description';
+    let alias = actionMap[action].alias ? actionMap[action].alias : 'alias';
 
     _commander2.default.command(action).description(description).alias(alias) //别名
     .action(() => {

@@ -10,7 +10,9 @@
     "compile": "babel src -d dist",
     "watch": "npm run compile -- --watch"
   },
-  "keywords": ["cli"],
+  "keywords": [
+    "cli"
+  ],
   "author": "290006982@qq.com",
   "license": "MIT",
   "dependencies": {
